@@ -36,14 +36,14 @@ void findAverageTime(process processes[], int n)
         total_wt = total_wt + wt[i];
         total_tat = total_tat + tat[i];
     }
-    cout << "Average waiting time" << (float)total_wt / (float)n << endl;
-    cout << "Average turn around time =" << (float)total_tat / (float)n << endl;
+    cout << "Average waiting time: " << (float)total_wt / (float)n << endl;
+    cout << "Average turn around time = " << (float)total_tat / (float)n << endl;
 }
 
 void SJF(process processes[], int n)
 {
     sort(processes, processes + n, comparison);
-    cout << "order of execution:";
+    cout << "order of execution: ";
     for (int i = 0; i < n; i++)
         cout << processes[i].id << " ";
     cout << endl;
@@ -53,13 +53,13 @@ void SJF(process processes[], int n)
 int main()
 {
     int n;
-    cout << "enter the number of processes :";
+    cout << "enter the number of processes: ";
     cin >> n;
     process processes[n];
     for (int i = 0; i < n; i++)
     {
         processes[i].id = i + 1;
-        cout << "enter burst time for process" << i + 1 << ": ";
+        cout << "enter burst time for process " << i + 1 << ": ";
         cin >> processes[i].burstTime;
     }
     SJF(processes, n);
